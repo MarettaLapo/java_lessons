@@ -2,14 +2,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Chess chess = new Chess();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите координату x");
-        int x = scanner.nextInt();
-        chess.setX(x);
-        System.out.println("Введите координату y");
-        int y = scanner.nextInt();
-        chess.setY(y);
-        System.out.println("На шахматной доске: " + chess.toString());
+        Songs song1 = new Songs("some name", "some one");
+        Songs song2 = new Songs("another name", "another one");
+
+        USB usb = new USB(song1, song2);
+        Vinyl vinyl = new Vinyl(song1);
+
+        Player player = new Player("usb-флешка");
+        System.out.println(player.play(usb));
+        System.out.println(player.play(vinyl));
     }
 }
